@@ -1,0 +1,16 @@
+/**
+Typedoc configuration file.
+Refer to https://typedoc.org/documents/Options.Configuration.html
+*/
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": [
+        "./src/"
+    ],
+    "entryPointStrategy": "expand",
+    "out": "doc",
+    "excludePrivate": false,
+    "excludeProtected": false,
+    "readme": "./README.md",
+    "excludeInternal": true
+}

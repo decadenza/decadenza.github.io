@@ -1,0 +1,55 @@
+{
+  "name": "frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "test": "jest",
+    "lint": "eslint .",
+    "lintFix": "eslint . --fix",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "7.3.1",
+    "@fortawesome/free-regular-svg-icons": "7.3.1",
+    "@fortawesome/free-solid-svg-icons": "7.3.1",
+    "@fortawesome/react-fontawesome": "3.5.0",
+    "@picocss/pico": "2.1.1",
+    "echarts": "6.1.0",
+    "echarts-for-react": "3.0.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router-dom": "7.11.0",
+    "sass": "1.102.0",
+    "zustand": "5.0.14"
+  },
+  "devDependencies": {
+    "@eslint/css": "1.4.0",
+    "@eslint/json": "2.0.1",
+    "@eslint/markdown": "8.0.3",
+    "@testing-library/jest-dom": "7.0.0",
+    "@testing-library/react": "16.3.2",
+    "@types/jest": "30.0.0",
+    "@types/node": "26.1.2",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "6.0.3",
+    "eslint": "9.39.5",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.3",
+    "globals": "17.9.0",
+    "jest": "30.4.2",
+    "jest-environment-jsdom": "30.4.1",
+    "ts-jest": "29.4.12",
+    "ts-node": "10.9.2",
+    "typedoc": "0.28.20",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.62.1",
+    "vite": "8.2.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}

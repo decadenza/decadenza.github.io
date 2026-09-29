@@ -1,0 +1,671 @@
+// SECTION Pico setup and configuration
+// See https://picocss.com/
+// NOTE: The dark theme is currently set as default in the root index.html
+// by using the <html data-theme="dark">
+@use "@picocss/pico/scss/pico" with ($theme-color: "red",
+  $enable-semantic-container: true,
+  $enable-classes: false,
+);
+
+// Import color variables.
+@use "@picocss/pico/scss/colors" as *;
+
+// !SECTION
+
+// Import custom fonts.
+
+@use 'sass:color';
+
+// SECTION Custom style overrides.
+// Override style CSS variables here as needed.
+// NOTE: Style CSS variables *do not* depend on colour scheme.
+// See https://picocss.com/docs/css-variables
+:root {
+  // SECTION Custom root definitions.
+
+  // General colour variables.
+  // These are theme independent. If applicable, associate them to the specific functionality
+  // in the dark/light theme configurations below. 
+  /* --- Monochromatic gray --- */
+  --root-black: #000000;
+  --root-white: #FFFFFF;
+
+  --root-black-opacity80: rgba(0, 0, 0, 0.8); // black OP80
+  --root-black-opacity60: rgba(0, 0, 0, 0.6); // black OP60
+  --root-black-opacity40: rgba(0, 0, 0, 0.4); // black OP40
+  --root-black-opacity20: rgba(0, 0, 0, 0.2); // black OP20
+  --root-black-opacity15: rgba(0, 0, 0, 0.15); // black OP15
+  --root-black-opacity10: rgba(0, 0, 0, 0.1); // black OP10
+
+  --root-white-opacity80: rgba(255, 255, 255, 0.8); // white OP80
+  --root-white-opacity60: rgba(255, 255, 255, 0.6); // white OP60
+  --root-white-opacity40: rgba(255, 255, 255, 0.4); // white OP40
+  --root-white-opacity20: rgba(255, 255, 255, 0.2); // white OP20
+  --root-white-opacity15: rgba(255, 255, 255, 0.15); // white OP15
+  --root-white-opacity10: rgba(255, 255, 255, 0.1); // white OP10
+
+  --root-gray-50: #F6F6F6;
+  --root-gray-100: #E7E7E7;
+  --root-gray-200: #D1D1D1;
+  --root-gray-300: #B0B0B0;
+  --root-gray-400: #888888;
+  --root-gray-500: #6D6D6D;
+  --root-gray-600: #5D5D5D;
+  --root-gray-700: #4F4F4F;
+  --root-gray-800: #454545;
+  --root-gray-900: #3D3D3D;
+  --root-gray-950: #272727;
+
+  /* --- Red Palette --- */
+  --root-red-50: #FFF0F3;
+  --root-red-100: #FFDDE3;
+  --root-red-200: #FFC1CD;
+  --root-red-300: #FF95A9;
+  --root-red-400: #FF5978;
+  --root-red-500: #FF264F;
+  --root-red-600: #FC0634;
+  --root-red-700: #E4002B;
+  --root-red-800: #AF0525;
+  --root-red-900: #900C25;
+  --root-red-950: #50000F;
+
+  /* --- Green Palette --- */
+  --root-green-50: #F1FCF1;
+  --root-green-100: #DDFBDF;
+  --root-green-200: #BEF4C3;
+  --root-green-300: #8AEB95;
+  --root-green-400: #6CDE79;
+  --root-green-500: #29BE3B;
+  --root-green-600: #1C9D2C;
+  --root-green-700: #1A7B26;
+  --root-green-800: #196223;
+  --root-green-900: #175020;
+  --root-green-950: #072C0D;
+
+  /* --- Amber Palette --- */
+  --root-amber-50: #FFFAEB;
+  --root-amber-100: #FFF1C6;
+  --root-amber-200: #FFE288;
+  --root-amber-300: #FFD15B;
+  --root-amber-400: #FFB720;
+  --root-amber-500: #F99407;
+  --root-amber-600: #DD6D02;
+  --root-amber-700: #B74B06;
+  --root-amber-800: #94390C;
+  --root-amber-900: #7A300D;
+  --root-amber-950: #461702;
+
+  /* --- Blue Palette --- */
+  --root-blue-50: #F0F7FF;
+  --root-blue-100: #E0EEFE;
+  --root-blue-200: #BBDEFC;
+  --root-blue-300: #7EC3FB;
+  --root-blue-400: #51AFF7;
+  --root-blue-500: #1089E7;
+  --root-blue-600: #046BC5;
+  --root-blue-700: #05569F;
+  --root-blue-800: #084984;
+  --root-blue-900: #0D3E6D;
+  --root-blue-950: #092748;
+
+  // SECTION Layout variables (shared across all colour themes).
+  --root-font-family-sans-serif: 'Rubik', sans-serif; // Custom font followed by a generic fallback.
+  --root-font-family-monospace: "Liberation Mono", monospace; // Custom font followed by a generic fallback.
+  --root-font-family: var(--pico-font-family-sans-serif);
+  --root-border-radius: 6px;
+  --root-border-size-small: 1px;
+  --root-border-size: 2px;
+  --root-border-size-large: 4px;
+  // Title
+  --root-font-size-title: 24px;
+  --root-font-weight-title: 600; // Semi-bold.
+  --root-letter-spacing-title: 0.25px;
+  --root-line-height-title: 110%;
+  // Subtitle.
+  --root-font-size-subtitle: 16px;
+  --root-font-weight-subtitle: 600; // Semi-bold.
+  --root-letter-spacing-subtitle: 0.25px;
+  --root-line-height-subtitle: 110%;
+  // Body = default.
+  --root-font-size: 16px;
+  --root-font-weight: 400; // Regular.
+  --root-letter-spacing: 0.25px;
+  --root-line-height: 130%;
+  // Small.
+  --root-font-size-small: 14px;
+  --root-font-weight-small: 400; // Regular.
+  --root-letter-spacing-small: 0.25px;
+  --root-line-height-small: 130%;
+  // Very small.
+  --root-font-size-extra-small: 12px;
+  --root-font-weight-extra-small: 400; // Regular.
+  --root-letter-spacing-extra-small: 0.25px;
+  --root-line-height-extra-small: 110%;
+  // Tag.
+  --root-font-size-tag: 12px;
+  --root-font-weight-tag: 600;
+  --root-letter-spacing-tag: 0;
+  --root-line-height-tag: 110%;
+  // Padding variables.
+  --root-padding-extra-extra-small: 3px;
+  --root-padding-extra-small: 6px;
+  --root-padding-small: 12px;
+  --root-padding: 16px;
+  --root-padding-large: 18px;
+  --root-padding-extra-large: 24px;
+  // Margin variables.
+  --root-margin-extra-extra-small: 3px;
+  --root-margin-extra-small: 6px;
+  --root-margin-small: 12px;
+  --root-margin: 16px;
+  --root-margin-large: 18px;
+  --root-margin-extra-large: 24px;
+  // Button size (avoiding duplication for use by other button-height components)
+  --root-button-height: 44px;
+  // Common drop shadow for floating modeless components (expanded menus, toasts...)
+  --root-drop-shadow: 0px 0px 24px var(--root-black-opacity60);
+
+  // !SECTION
+
+  // Overrides to the Picocss layout configuration.
+  --pico-font-family-sans-serif: var(--root-font-family-sans-serif);
+  --pico-font-family-monospace: var(--root-font-family-monospace);
+  --pico-font-family: var(--pico-font-family-sans-serif);
+  --pico-border-radius: var(--root-border-radius);
+  --pico-border-width: var(--root-border-size);
+  --pico-line-height: var(--root-font-line-height); // Default.
+  --pico-font-weight: var(--root-font-weight); // Default.
+  --pico-font-size: var(--root-font-size); // Default.
+
+  --pico-spacing: var(--root-margin-small);
+
+  --pico-modal-overlay-backdrop-filter: none;
+
+  // disable transitions for immediate changes
+  --pico-transition: none;
+}
+
+// Dark theme configuration.
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+
+  // Our dark theme variables.
+  --theme-color-primary: var(--root-white);
+  --theme-color-secondary: var(--root-white-opacity60);
+  --theme-color-accent: var(--root-red-700);
+  --theme-color-disabled: var(--root-gray-500);
+  --theme-color-background: var(--root-black);
+
+  --theme-color-background-elevation0: var(--theme-color-background);
+  --theme-color-background-elevation1: var(--root-gray-950);
+  --theme-color-background-elevation2: var(--root-gray-900);
+  --theme-color-background-elevation3: var(--root-gray-700);
+  --theme-color-background-elevation4: var(--root-gray-500);
+  --theme-color-background-elevation5: var(--root-gray-400);
+  --theme-color-background-elevation6: var(--root-gray-300);
+  --theme-color-background-disabled: var(--root-gray-700);
+  --theme-color-background-hover: var(--root-white-opacity15);
+  --theme-color-background-active: var(--root-white-opacity20);
+  --theme-color-background-overlay: var(--root-black-opacity80);
+
+  --theme-color-action-main: var(--root-white);
+  --theme-color-action-hover: var(--root-gray-50);
+  --theme-color-action-active: var(--root-gray-100);
+  --theme-color-action-contrast: var(--root-black);
+
+  --theme-color-alert-main: var(--root-red-700);
+  --theme-color-alert-light: var(--root-red-300);
+  --theme-color-alert-dark: var(--root-red-800);
+  --theme-color-alert-contrast: var(--root-white);
+  --theme-color-alert-hover: var(--root-red-600);
+  --theme-color-alert-active: var(--root-red-500);
+
+  --theme-color-success-main: var(--root-green-400);
+  --theme-color-success-light: var(--root-green-200);
+  --theme-color-success-dark: var(--root-green-600);
+  --theme-color-success-contrast: var(--root-black);
+  --theme-color-success-hover: var(--root-green-300);
+  --theme-color-success-active: var(--root-green-200);
+
+  --theme-color-warning-main: var(--root-amber-300);
+  --theme-color-warning-light: var(--root-amber-100);
+  --theme-color-warning-dark: var(--root-amber-500);
+  --theme-color-warning-contrast: var(--root-black);
+  --theme-color-warning-hover: var(--root-amber-200);
+  --theme-color-warning-active: var(--root-amber-100);
+
+  --theme-color-info-main: var(--root-blue-400);
+  --theme-color-info-light: var(--root-blue-200);
+  --theme-color-info-dark: var(--root-blue-600);
+  --theme-color-info-contrast: var(--root-black);
+  --theme-color-info-hover: var(--root-blue-300);
+  --theme-color-info-active: var(--root-blue-200);
+
+  --theme-color-item-main: var(--root-gray-900);
+  // fully opaque colours with a close similarity to item-main + background-hover or background-active
+  --theme-color-item-hover: var(--root-gray-700);
+  --theme-color-item-active: var(--root-gray-600);
+  // mid-tone overlay that works on all of the previous 3
+  --theme-color-item-overlay: var(--root-white-opacity20);
+  // dark-tone (in dark mode anyway) overlay that works on those 3
+  --theme-color-item-dark: var(--root-black-opacity40);
+
+  --theme-graph-series-color-1: "#6cde79";
+  --theme-graph-series-color-2: "#51aff7";
+  --theme-graph-series-color-3: "#e4002b";
+  --theme-graph-series-color-4: "#ff9e4f";
+  --theme-graph-series-color-5: "#ffd15b";
+  --theme-graph-series-color-6: "#ac51f7";
+  --theme-graph-series-color-7: "#fd37f3";
+  --theme-graph-series-color-8: "#2577f2";
+  --theme-graph-series-color-9: "#25d6f2";
+  --theme-graph-series-color-10: "#25f2b1";
+  --theme-graph-series-color-11: "#ffffff";
+  --theme-graph-series-color-12: "#aaaaaa";
+
+  // Override Pico colour CSS variables here (these depend on colour scheme).
+  // See "colors CSS variables" at https://picocss.com/docs/css-variables
+  color-scheme: dark;
+  --pico-background-color: var(--root-black);
+  --pico-color: var(--theme-color-primary);
+  --pico-text-selection-color: color-mix(in srgb, var(--root-blue-200) 50%, transparent);
+  --pico-muted-color: var(--root-gray-500);
+  --pico-muted-border-color: var(--root-gray-500);
+  --pico-primary: var(--root-white);
+  --pico-primary-background: var(--root-black);
+  --pico-primary-border: var(--pico-primary-background);
+  --pico-primary-underline: color-mix(in srgb, var(--root-black) 50%, transparent);
+  --pico-primary-hover: var(--theme-color-action-hover);
+  --pico-primary-hover-background: var(--theme-color-background-hover);
+  --pico-primary-hover-border: var(--pico-primary-hover-background);
+  --pico-primary-hover-underline: var(--pico-primary-hover);
+  --pico-primary-focus: rgba(var(--root-gray-300), 0.375);
+  --pico-primary-inverse: var(--root-white);
+  --pico-secondary: var(--theme-color-secondary);
+  --pico-secondary-background: var(--root-gray-500);
+  --pico-secondary-border: var(--pico-secondary-background);
+  --pico-secondary-underline: rgba(var(--root-gray-700), 0.5);
+  --pico-secondary-hover: var(--root-gray-100);
+  --pico-secondary-hover-background: var(--root-gray-950);
+  --pico-secondary-hover-border: var(--pico-secondary-hover-background);
+  --pico-secondary-hover-underline: var(--pico-secondary-hover);
+  --pico-secondary-focus: rgba(var(--root-gray-50), 0.25);
+  --pico-secondary-inverse: var(--root-white);
+  --pico-contrast: var(--root-black);
+  --pico-contrast-background: var(--root-gray-100);
+  --pico-contrast-border: var(--pico-contrast-background);
+  --pico-contrast-underline: rgba(--root-gray-100, 0.5);
+  --pico-contrast-hover: var(--root-white);
+  --pico-contrast-hover-background: var(--root-white);
+  --pico-contrast-hover-border: var(--pico-contrast-hover-background);
+  --pico-contrast-hover-underline: var(--pico-contrast-hover);
+  --pico-contrast-focus: rgba(var(--root-gray-900), 0.25);
+  --pico-contrast-inverse: (--var-theme-black);
+  --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(var(--root-gray-950), 0.01698), 0.0335rem 0.067rem 0.402rem rgba(var(--root-gray-950), 0.024), 0.0625rem 0.125rem 0.75rem rgba(var(--root-gray-950), 0.03), 0.1125rem 0.225rem 1.35rem rgba(var(--root-gray-950), 0.036), 0.2085rem 0.417rem 2.502rem rgba(var(--root-gray-950), 0.04302), 0.5rem 1rem 6rem rgba(var(--root-gray-950), 0.06), 0 0 0 0.0625rem rgba(var(--root-gray-950), 0.015);
+  --pico-h1-color: var(--root-white);
+  --pico-h2-color: var(--root-gray-50);
+  --pico-h3-color: var(--root-gray-100);
+  --pico-h4-color: var(--root-gray-200);
+  --pico-h5-color: var(--root-gray-300);
+  --pico-h6-color: var(--root-gray-400);
+  --pico-mark-background-color: var(--root-blue-600);
+  --pico-mark-color: var(--root-blue-200);
+  --pico-ins-color: var(--root-green-400);
+  --pico-del-color: var(--root-red-300);
+  --pico-blockquote-border-color: var(--pico-muted-border-color);
+  --pico-blockquote-footer-color: var(--pico-muted-color);
+  --pico-button-box-shadow: 0 0 0 rgba(var(--root-black), 0);
+  --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pico-table-border-color: var(--pico-muted-border-color);
+  --pico-table-row-stripped-background-color: rgba(var(--root-black), 0.0375);
+  --pico-code-background-color: rgb(var(--root-gray-950), 40.25);
+  --pico-code-color: var(--root-gray-200);
+  --pico-code-kbd-background-color: var(--pico-color);
+  --pico-code-kbd-color: var(--pico-background-color);
+  --pico-form-element-background-color: var(--root-gray-950);
+  --pico-form-element-selected-background-color: var(--root-gray-700);
+  --pico-form-element-border-color: var(--root-gray-700);
+  --pico-form-element-color: var(--root-white);
+  --pico-form-element-placeholder-color: var(--root-gray-500);
+  --pico-form-element-active-background-color: var(--root-gray-700);
+  --pico-form-element-active-border-color: var(--root-gray-400);
+  --pico-form-element-focus-color: var(--pico-primary-border);
+  --pico-form-element-disabled-opacity: 1.0;
+  --pico-form-element-invalid-border-color: var(--root-red-300);
+  --pico-form-element-invalid-active-border-color: var(--root-red-600);
+  --pico-form-element-invalid-focus-color: var(--pico-form-element-invalid-active-border-color);
+  --pico-form-element-valid-border-color: var(--root-green-200);
+  --pico-form-element-valid-active-border-color: var(--root-green-600);
+  --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
+  --pico-switch-background-color: var(--root-gray-700);
+  --pico-switch-checked-background-color: var(--pico-primary-background);
+  --pico-switch-color: var(--root-white);
+  --pico-switch-thumb-box-shadow: 0 0 0 rgba(var(--root-black), 0);
+  --pico-range-border-color: var(--root-gray-900);
+  --pico-range-active-border-color: var(--root-gray-700);
+  --pico-range-thumb-border-color: var(--pico-background-color);
+  --pico-range-thumb-color: var(--pico-secondary-background);
+  --pico-range-thumb-active-color: var(--pico-primary);
+  --pico-accordion-border-color: var(--pico-muted-border-color);
+  --pico-accordion-active-summary-color: var(--pico-primary-hover);
+  --pico-accordion-close-summary-color: var(--pico-color);
+  --pico-accordion-open-summary-color: var(--pico-muted-color);
+  --pico-card-background-color: var(--root-gray-900);
+  --pico-card-border-color: var(--pico-card-background-color);
+  --pico-card-box-shadow: var(--pico-box-shadow);
+  --pico-card-sectioning-background-color: var(--root-gray-900);
+  --pico-dropdown-background-color: var(--root-gray-900);
+  --pico-dropdown-border-color: var(--root-gray-900);
+  --pico-dropdown-box-shadow: var(--pico-box-shadow);
+  --pico-dropdown-color: var(--pico-color);
+  --pico-dropdown-hover-background-color: var(--root-gray-700);
+  --pico-loading-spinner-opacity: 0.5;
+  --pico-modal-overlay-background-color: var(--theme-color-background-overlay);
+  --pico-progress-background-color: var(--root-gray-700);
+  --pico-progress-color: var(--pico-primary-background);
+  --pico-tooltip-background-color: var(--pico-contrast-background);
+  --pico-tooltip-color: var(--pico-contrast-inverse);
+  /* TODO: Customise these icons when dealing with forms. */
+  --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+}
+
+// Light theme configuration.
+// Override color CSS variables here (these depend on colour scheme).
+// See "colors CSS variables" at https://picocss.com/docs/css-variables
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  color-scheme: light;
+  // Currently unused, leaving the Pico defaults.
+}
+
+// !SECTION
+
+//////////////////////////////////////////////////////////////////////////
+// Global CSS style for the application.                                //
+// NOTE: Keep the style within the components, this is the last resort. //
+//////////////////////////////////////////////////////////////////////////
+
+// Override browser default.
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-width: 1200px;
+  /* Forces the page to stay wide also on mobile devices. */
+  overflow-x: auto;
+  /* Allows horizontal scrolling if needed */
+}
+
+// React **root** container of the whole application.
+div#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: var(--root-padding-extra-large);
+  text-align: center;
+  // Allows the app to fill the entire viewport, also vertically..
+  display: flex;
+  flex-direction: column;
+  gap: var(--root-padding-extra-large);
+  height: 100%;
+}
+
+// Prevent background scrolling when a dialog is open.
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+// Common link styling.
+a {
+  text-decoration: none;
+}
+
+// Title.
+h1 {
+  --pico-font-size: var(--root-font-size-title);
+  --pico-font-weight: var(--root-font-weight-title);
+}
+
+// Subtitle.
+h2 {
+  --pico-font-size: var(--root-font-size-subtitle);
+  --pico-font-weight: var(--root-font-weight-subtitle);
+}
+
+// Other headings.
+h3,
+h4,
+h5,
+h6 {
+  --pico-font-size: var(--root-font-size); // Normal size.
+  --pico-font-weight: var(--root-font-weight-subtitle); // Subtitle weight.
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border: var(--root-border-size) solid var(--theme-color-primary);
+  margin: var(--root-margin-extra-small);
+  display: inline-block;
+
+  &+label {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+input[type="checkbox"] {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  vertical-align: middle;
+
+  /* Create a custom checkbox */
+  width: 20px;
+  height: 20px;
+  margin: var(--root-margin-extra-small);
+  background-color: var(--theme-color-background);
+  border: 1px solid var(--theme-color-primary);
+  border-radius: var(--root-border-radius);
+  cursor: pointer;
+  position: relative;
+  cursor: pointer;
+  /* Indicate it's clickable */
+
+  /* Common styles for checked and indeterminate states */
+  &:checked,
+  &:indeterminate {
+    background-color: var(--theme-color-primary);
+    /* Background color when checked/indeterminate */
+
+
+    /* Common settings for internal symbols (checkmark/dash) */
+    &::before {
+      content: "";
+      /* Required for pseudo-elements */
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      mask-size: 70%;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-composite: intersect;
+      /* Color of the checkmark/dash */
+      background-color: var(--theme-color-background);
+    }
+  }
+
+  /* Add a checkmark for the checked state */
+  &:checked::before {
+    mask-image: url("assets/images/check.svg");
+    /* Apply the checkmark SVG as a mask */
+  }
+
+  /* Add a dash for the indeterminate state */
+  &:indeterminate::before {
+    /* Apply the dash SVG as a mask */
+    mask-image: url("assets/images/indeterminate.svg");
+  }
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  background-color: var(--theme-color-background);
+
+  &:checked,
+  &:active,
+  &:focus,
+  &:checked:focus,
+  &:checked:active {
+    border-width: 7px;
+  }
+}
+
+// Select and option general styling.
+select {
+  appearance: base-select;
+  background-color: var(--theme-color-background-elevation0);
+  border: var(--root-border-size) solid var(--theme-color-background-elevation3);
+
+  &:hover {
+    background-color: var(--theme-color-background-elevation1);
+  }
+
+  &:active,
+  &:focus {
+    background-color: var(--theme-color-background-elevation2);
+  }
+
+  // FIXME Currently not supported by all browsers.
+  // See https://developer.mozilla.org/en-US/docs/Web/CSS/::picker-icon#browser_compatibility
+  &::picker-icon {
+    color: var(--theme-color-primary);
+  }
+
+  option {
+    background-color: var(--theme-color-background-elevation2);
+
+    &:hover {
+      background-color: var(--theme-color-background-elevation3);
+    }
+
+    &:active,
+    &:checked,
+    &:focus {
+      background-color: var(--theme-color-background-elevation3) !important;
+    }
+  }
+}
+
+// SECTION Table general styling.
+table {
+  background-color: var(--theme-color-background-elevation1);
+  font-size: var(--root-font-size-small);
+  font-weight: var(--root-font-weight-small);
+  letter-spacing: var(--root-letter-spacing-small);
+  line-height: var(--root-line-height-small);
+  margin: 0;
+
+  td,
+  th {
+    border: var(--root-border-size-small) solid var(--theme-color-background-elevation1);
+    padding: var(--root-padding-small);
+  }
+
+  tbody {
+    border-radius: var(--root-border-radius);
+    overflow: scroll;
+
+    // Dealing with the fancy borders.
+    tr:first-child {
+      >td:first-child {
+        border-top-left-radius: var(--root-border-radius);
+      }
+
+      >td:last-child {
+        border-top-right-radius: var(--root-border-radius);
+      }
+    }
+
+    tr:last-child {
+      >td:first-child {
+        border-bottom-left-radius: var(--root-border-radius);
+      }
+
+      >td:last-child {
+        border-bottom-right-radius: var(--root-border-radius);
+      }
+    }
+  }
+
+  tr:hover td {
+    background-color: var(--theme-color-background-active);
+  }
+
+  thead,
+  tfoot {
+    text-transform: uppercase;
+    font-size: var(--root-font-size-tag);
+    font-weight: var(--root-font-weight-tag);
+    letter-spacing: var(--root-letter-spacing-tag);
+    line-height: var(--root-line-height-tag);
+
+    th,
+    td {
+      color: var(--theme-color-secondary);
+    }
+  }
+
+  td {
+    background-color: var(--theme-color-background-elevation2);
+  }
+
+  th,
+  tfoot td {
+    background-color: var(--theme-color-background-elevation1);
+  }
+
+}
+
+// !SECTION End of general table style.
+
+form {
+  text-align: left;
+  margin: 0 10%;
+  min-width: 200px;
+
+  input:not([type='checkbox']),
+  textarea,
+  select {
+    border-color: var(--root-white-opacity40);
+    background-color: transparent;
+
+    &:is(:hover):not(:disabled) {
+      border-color: var(--root-white-opacity40);
+      background-color: var(--root-white-opacity10);
+    }
+
+    &:is(:focus):not(:disabled) {
+      border-color: var(--root-white-opacity60);
+      background-color: var(--root-white-opacity20);
+    }
+  }
+
+  fieldset {
+    &>legend {
+      display: block;
+      margin-bottom: var(--root-margin-large);
+      font-size: var(--root-font-size-subtitle);
+      font-weight: var(--root-font-weight-title);
+      letter-spacing: var(--root-letter-spacing-subtitle);
+      line-height: var(--root-line-height-subtitle);
+      color: var(--theme-color-secondary);
+    }
+  }
+
+}
