@@ -1,7 +1,6 @@
 # Most common command: build and upload.
 .PHONY: all
 all: run
-	@echo "Make complete on $(SSH_TARGET)"
 
 .PHONY: run
 run:

@@ -6,7 +6,7 @@
  * @module main
 */
 
-import './App.scss'
+import './App.css'
 import { GENERAL } from './constants'
 import { Suspense, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

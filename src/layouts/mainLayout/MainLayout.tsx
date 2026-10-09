@@ -1,8 +1,13 @@
 import { Outlet } from "react-router-dom"
+import Navbar from "../../components/navBar/NavBar"
+import Footer from "../../components/footer/Footer"
+
 export default function UserLayout() {
-    // TODO: Add header.
-    // TODO: Add footer.
     return <>
-        <Outlet />
+        <Navbar />
+        <main>
+            <Outlet />
+        </main>
+        <Footer />
     </>
 }

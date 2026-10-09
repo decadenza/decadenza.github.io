@@ -14,8 +14,8 @@ import {
     faArrowDown,
     faArrowLeft,
     faArrowRight,
-    faArrowsRotate,
     faArrowRotateLeft,
+    faArrowsRotate,
     faArrowsUpToLine,
     faArrowUp,
     faBars,
@@ -29,19 +29,20 @@ import {
     faCircleQuestion,
     faClock,
     faDatabase,
+    faDiagramProject,
     faDoorOpen,
     faFile,
-    faHouse,
+    faGear,
     faHourglassEnd,
+    faHouse,
     faLock,
     faMagnifyingGlass,
-    faMoon,
     faMicroscope,
+    faMoon,
     faPause,
     faPen,
     faPlay,
     faPlus,
-    faGear,
     faPowerOff,
     faSliders,
     faSpinner,
@@ -51,8 +52,11 @@ import {
     faTrash,
     faTriangleExclamation,
     faWind,
+    faWrench,
     faXmark,
 } from '@fortawesome/free-solid-svg-icons'
+
+import { faLinkedin, faGithub, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 
 import {
     faSquare,
@@ -85,7 +89,6 @@ import {
 export const ADD = faPlus;
 export const ADJUST = faSliders;
 export const ALERT = faCircleExclamation;
-export const ERROR = faCircleExclamation;
 export const ARROW_DOWN = faArrowDown;
 export const ARROW_LEFT = faArrowLeft;
 export const ARROW_RIGHT = faArrowRight;
@@ -97,17 +100,20 @@ export const CIRCLE = faCircle;
 export const CLOCK = faClock;
 export const CLOSE = faXmark;
 export const DATA = faDatabase;
+export const DIAGRAM = faDiagramProject;
 export const DOCUMENT = faFile;
 export const EDIT = faPen;
-export const TRACKING = faBurst;
+export const ERROR = faCircleExclamation;
 export const EXTERNAL_LINK = faSquareUpRight;
 export const FAILURE = faCircleExclamation;
-export const SETTINGS = faGear;
+export const GITHUB = faGithub;
+export const GOOGLE_SCHOLAR = faGoogleScholar;
 export const HEAT = faArrowsUpToLine;
 export const HOME = faHouse;
 export const IDLE = faHourglassEnd;
 export const INFO = faCircleInfo;
 export const INVALID = faXmark;
+export const LINKEDIN = faLinkedin;
 export const LOADING = faSpinner;
 export const LOCKED = faLock;
 export const LOGOUT = faDoorOpen;
@@ -126,16 +132,19 @@ export const POWERING_OFF = faMoon;
 export const REBOOT = faArrowRotateLeft;
 export const REFRESH = faArrowsRotate;
 export const SEARCH = faMagnifyingGlass; // Used for search bars.
+export const SETTINGS = faGear;
 export const STOP = faStop;
 export const SUCCESS = faCircleCheck;
 export const SUSPENDED = faStop;
 export const TIME = faHourglassEnd;
+export const TRACKING = faBurst;
 export const TRASH = faTrash;
 export const UNKNOWN = faCircleQuestion;
 export const VALID = faCheck;
 export const WAIT = faClock;
 export const WARNING = faTriangleExclamation;
 export const WIND = faWind;
+export const WRENCH = faWrench;
 // TODO: Add other icons with relatable names here...
 
 

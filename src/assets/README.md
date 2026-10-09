@@ -1,0 +1,1 @@
+Place all UI images, SVGs, and fonts in src/assets/. Reserve public/ strictly for root-level configuration files (robots.txt, favicon.ico) and assets requiring fixed, unhashed URLs.

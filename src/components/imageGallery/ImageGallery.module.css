@@ -1,0 +1,14 @@
+.imageGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--root-spacing);
+}
+
+.imageGallery>img {
+    flex: 0 1 var(--image-flex-basis);
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
