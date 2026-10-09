@@ -1,7 +1,6 @@
 import style from './Services.module.css';
 import Icon from '../../components/icon/Icon';
 import { ICONS } from '../../constants';
-import { GENERAL } from "../../constants";
 import EmailRevealer from "../../components/emailRevealer/EmailRevealer";
 
 export default function Services() {
