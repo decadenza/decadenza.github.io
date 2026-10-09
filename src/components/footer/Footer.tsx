@@ -1,12 +1,13 @@
 import { GENERAL } from "../../constants"
 import Icon from "../../components/icon/Icon"
 import { ICONS } from "../../constants"
+import EmailRevealer from "../emailRevealer/EmailRevealer"
 
 export default function Footer() {
     return <footer>
         <div>&copy; 2026 {GENERAL.MY_NAME}</div>
         <address>
-            <a href={"mailto:" + GENERAL.EMAIL}>{GENERAL.EMAIL}</a><br />
+            <EmailRevealer /><br />
             <h4>
                 <a target="_blank" href="https://www.linkedin.com/in/pasquale-lafiosca/"><Icon icon={ICONS.LINKEDIN} /></a>
                 <a target="_blank" href="https://github.com/decadenza/"><Icon icon={ICONS.GITHUB} /></a>

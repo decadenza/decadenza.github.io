@@ -1,0 +1,6 @@
+.revealer {
+    color: var(--pico-primary-inverse);
+    background-color: var(--root-accent);
+    cursor: pointer;
+    padding: 0 var(--root-spacing-xs);
+}

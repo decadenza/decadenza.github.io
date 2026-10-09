@@ -1,7 +1,8 @@
 import style from './Services.module.css';
 import Icon from '../../components/icon/Icon';
 import { ICONS } from '../../constants';
-import { GENERAL } from "../../constants"
+import { GENERAL } from "../../constants";
+import EmailRevealer from "../../components/emailRevealer/EmailRevealer";
 
 export default function Services() {
 
@@ -17,7 +18,7 @@ export default function Services() {
                 <li>Support for research activities and related custom software.</li>
             </ul>
 
-            The first step is to drop me an email <a href={"mailto:" + GENERAL.EMAIL}>{GENERAL.EMAIL}</a> or
+            The first step is to drop me an email <EmailRevealer /> or
             connect with me on <a target="_blank" href="https://www.linkedin.com/in/pasquale-lafiosca/">
                 <Icon icon={ICONS.LINKEDIN} />LinkedIn</a>!
         </article>
