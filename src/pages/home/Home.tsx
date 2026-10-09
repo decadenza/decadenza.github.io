@@ -7,7 +7,7 @@ export default function Home() {
     return (<div className={style.container}>
         <article>
             <header>
-                <h1><Icon icon={ICONS.HOME} />About</h1>
+                <h1><Icon icon={ICONS.HOME} />Home</h1>
             </header>
             Hello, I am Pasquale Lafiosca (often known as Paco), an Engineer, DIY lover, passioned about science and technology.
             <br />
