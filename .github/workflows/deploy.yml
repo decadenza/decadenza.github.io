@@ -18,20 +18,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: node:26
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      # Official GitHub Cache for Node modules.
-      - name: Cache Node Modules
-        uses: actions/cache@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
         with:
-          path: frontend/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('frontend/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: "26"
+          cache: "npm" # This handles caching node_modules automatically!
 
       - name: Build
         run: make build
