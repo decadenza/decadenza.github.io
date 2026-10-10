@@ -11,11 +11,11 @@ import { GENERAL } from './constants'
 import { Suspense, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import { BrowserRouter } from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 import Loading from './components/loading/Loading'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <HashRouter>
     {/* Set the application title using the special rendering behaviour of React.*/}
     <title>{GENERAL.APP_NAME}</title>
     <Suspense fallback={<Loading />}>
@@ -24,5 +24,5 @@ createRoot(document.getElementById('root')!).render(
         <App />
       </StrictMode>
     </Suspense>
-  </BrowserRouter>
+  </HashRouter>
 )
