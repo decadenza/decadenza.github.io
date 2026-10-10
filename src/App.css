@@ -3130,7 +3130,6 @@ textarea,
 :root:not([data-theme=light]) {
   color-scheme: dark;
   --root-primary: var(--pico-primary);
-  ;
   --root-primary-inverse: var(--pico-primary-inverse);
   --root-accent: #FFCC00;
   --pico-h1-color: var(--root-accent);

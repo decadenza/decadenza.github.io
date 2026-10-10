@@ -8,18 +8,14 @@ export default function EmailRevealer() {
 
     if (revealed) {
         const email = `${decodeAscii(GENERAL.EMAIL)}`;
-        return <a href={`mailto:${email}`}>
-            {email}
-        </a>
+        return <a href={`mailto:${email}`}>{email}</a>
     }
     else {
         return (
             <span
                 className={style.revealer}
                 onClick={() => setRevealed(true)}
-            >
-                (click to reveal email address)
-            </span>
+            >[click to reveal email address]</span>
         );
     }
 }
