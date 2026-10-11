@@ -9,7 +9,7 @@ export default function Services() {
 
         <article>
             <header><h1><Icon icon={ICONS.WRENCH} />Services</h1></header>
-            I'd be happy to offer my services around software, particularly in areas like:
+            I'd be happy to collaborate with you and offer my services around software, particularly in areas like:
             <ul>
                 <li>Embedded software and IoT product development.</li>
                 <li>Custom development of websites, APIs and cloud services.</li>
