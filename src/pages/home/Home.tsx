@@ -28,7 +28,7 @@ export default function Home() {
             where I help people to repair their broken items and reduce waste, and I also enjoy tinkering with electronics and DIY.
             <br />
             <br />
-            When it's sunny and I'm not looking at a screen, I also enjoy beekeeping. Admittedly sometimes the situation
+            When it's sunny and I'm not looking at a screen, I'll spend time beekeeping. Admittedly sometimes the situation
             becomes less than pleasant, but still worth it.
             <ImageGallery imageFlexBasis="25%">
                 <img src="/img/bee1.jpg" alt="Beekeeping with the smoker" />
